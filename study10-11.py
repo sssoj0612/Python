@@ -16,7 +16,7 @@ window = Tk()
 window.geometry("210x210")
 
 for i in range(0, 9) :
-    photoList[i] = PhotoImage(file = "photo/" + fnameList[i])
+    photoList[i] = PhotoImage(file = "GIF/" + fnameList[i])
     btnList[i] = Button(window, image = photoList[i])
 
 for i in range(0, 3) :
