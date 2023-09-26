@@ -49,7 +49,7 @@ def func_exit() :
     window.destroy()
 def func_zoomin() :
     global window, canvas, paper, photo, photo2, oriX, oriY
-    scale = askinteger("확대", "확대할 배율을 입력하세요", minvalue=2, maxvalue=4)
+    scale = askinteger("확대", "확대할 배율을 입력하세요 (2~4)", minvalue=2, maxvalue=4)
     photo2 = photo.clone()
     photo2.resize(int(oriX * scale), int(oriY * scale))
     newX = photo2.width
@@ -57,7 +57,7 @@ def func_zoomin() :
     displayImage(photo2, newX, newY)
 def func_zoomout() :
     global window, canvas, paper, photo, photo2, oriX, oriY
-    scale = askinteger("축소", "축소할 배율을 입력하세요", minvalue=2, maxvalue=4)
+    scale = askinteger("축소", "축소할 배율을 입력하세요 (2~4)", minvalue=2, maxvalue=4)
     photo2 = photo.clone()
     photo2.resize(int(oriX / scale), int(oriY / scale))
     newX = photo2.width
@@ -79,7 +79,7 @@ def func_mirror2() :
     displayImage(photo2, newX, newY)
 def func_rotate() :
     global window, canvas, paper, photo, photo2, oriX, oriY
-    degree = askinteger("회전", "회전할 각도를 입력하세요", minvalue=0, maxvalue=360)
+    degree = askinteger("회전", "회전할 각도를 입력하세요 (0~360)", minvalue=0, maxvalue=360)
     photo2 = photo.clone()
     photo2.rotate(degree)
     newX = photo2.width
@@ -87,7 +87,7 @@ def func_rotate() :
     displayImage(photo2, newX, newY)
 def func_bright() :
     global window, canvas, paper, photo, photo2, oriX, oriY
-    value = askinteger("밝게", "값을 입력하세요(100~200)", minvalue=100, maxvalue=200)
+    value = askinteger("밝게", "값을 입력하세요 (100~200)", minvalue=100, maxvalue=200)
     photo2 = photo.clone()
     photo2.modulate(value, 100, 100)
     newX = photo2.width
@@ -95,7 +95,7 @@ def func_bright() :
     displayImage(photo2, newX, newY)
 def func_dark() :
     global window, canvas, paper, photo, photo2, oriX, oriY
-    value = askinteger("어둡게", "값을 입력하세요(0~100)", minvalue=0, maxvalue=100)
+    value = askinteger("어둡게", "값을 입력하세요 (0~100)", minvalue=0, maxvalue=100)
     photo2 = photo.clone()
     photo2.modulate(value, 100, 100)
     newX = photo2.width
@@ -103,7 +103,7 @@ def func_dark() :
     displayImage(photo2, newX, newY)
 def func_clear() :
     global window, canvas, paper, photo, photo2, oriX, oriY
-    value = askinteger("선명하게", "값을 입력하세요(0~100)", minvalue=0, maxvalue=100)
+    value = askinteger("선명하게", "값을 입력하세요 (100~200)", minvalue=100, maxvalue=200)
     photo2 = photo.clone()
     photo2.modulate(100, value, 100)
     newX = photo2.width
@@ -111,7 +111,7 @@ def func_clear() :
     displayImage(photo2, newX, newY)
 def func_unclear() :
     global window, canvas, paper, photo, photo2, oriX, oriY
-    value = askinteger("탁하게", "값을 입력하세요(0~100)", minvalue=0, maxvalue=100)
+    value = askinteger("탁하게", "값을 입력하세요 (0~100)", minvalue=0, maxvalue=100)
     photo2 = photo.clone()
     photo2.modulate(100, value, 100)
     newX = photo.width
